@@ -1,0 +1,31 @@
+   //put JS in header
+   <script type="text/javascript">
+	$( document ).ready(function() {
+  
+
+            $.get( "http://www.toledolibrary.org/landing-pages/blank-page", function( data ) {
+
+
+                values=data.split('</header>');
+                //alert(values[0]);
+                document.getElementById("webheader").innerHTML = values[0];
+
+                values2=values[1].split('<div class="row footer padding-lg">');
+                //alert(values2[0]);
+
+                //alert(values2[1]);
+                document.getElementById("webfooter").innerHTML = values2[1];
+
+            });
+                 });
+
+    </script>
+    
+    
+    //use in body html
+    
+    //to spit out html for first split
+    <div name=webheader[]" id="webheader"></div>
+    
+    //to spit out html for second split
+    <div name=webfooter[]" id="webfooter"></div>
